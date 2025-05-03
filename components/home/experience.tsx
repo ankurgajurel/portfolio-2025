@@ -2,7 +2,6 @@
 
 import { experiences } from "@/data/experience";
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 export default function Experience() {
   return (
@@ -33,13 +32,13 @@ export default function Experience() {
                 </h3>
                 <div className="flex items-center gap-2">
                   <span className="text-lg">@</span>
-                  <Link
+                  <a
                     href={exp.website}
                     target="_blank"
                     className="text-lg hover:underline"
                   >
                     {exp.company}
-                  </Link>
+                  </a>
                 </div>
                 <span className="text-sm text-gray-600">{exp.period}</span>
                 <span className="text-sm text-gray-600">({exp.type})</span>

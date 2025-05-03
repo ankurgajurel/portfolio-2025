@@ -14,7 +14,7 @@ export default function HomeBlog() {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <Link href="/blog">
+        <Link href="/#blogs">
           <h2 className="text-6xl flex gap-2 items-end group">
             <span className="group-hover:underline">writes</span>
             <ArrowUp
@@ -34,7 +34,7 @@ export default function HomeBlog() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <Link
+            <a
               href={`/blog/${post.slug}`}
               className="group border-b-[0.5px] border-black pb-8 last:border-0"
             >
@@ -47,7 +47,7 @@ export default function HomeBlog() {
                 </div>
                 <p className="text-lg font-light">{post.excerpt}</p>
               </div>
-            </Link>
+            </a>
           </motion.div>
         ))}
       </div>

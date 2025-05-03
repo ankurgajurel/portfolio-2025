@@ -153,6 +153,14 @@ export default function Terminal() {
   const clickSoundRef = useRef<HTMLAudioElement>(null);
   const terminalContainerRef = useRef<HTMLDivElement>(null);
 
+  const initialSizeRef = useRef({
+    width: typeof window !== "undefined" ? window.innerWidth <= 640 ? window.innerWidth : 600 : 600,
+    height: typeof window !== "undefined" ? window.innerWidth <= 640 ? window.innerHeight * 0.5 : 400 : 400,
+  });
+
+  const resizeTimeoutRef = useRef<NodeJS.Timeout>(null);
+  const isResizingRef = useRef(false);
+
   const focusInput = () => {
     if (!isDragging) {
       inputRef.current?.focus();
@@ -438,68 +446,76 @@ export default function Terminal() {
     document.addEventListener("mouseup", handleMouseUp);
 
     const handleWindowResize = () => {
-      if (!isFullscreen && !isDragging && !userHasDragged) {
-        if (window.innerWidth <= 640) {
-          setTerminalSize({
-            width: window.innerWidth,
-            height: window.innerHeight * 0.5,
-          });
+      if (isResizingRef.current) return;
+      isResizingRef.current = true;
 
-          setPosition({
-            x: 0,
-            y: window.innerHeight - window.innerHeight * 0.5,
-          });
-        } else {
-          setTerminalSize({
-            width: 600,
-            height: 400,
-          });
-
-          setPosition({
-            x: window.innerWidth - 620,
-            y: window.innerHeight - 420,
-          });
-        }
-      } else {
-        // For mobile devices
-        if (window.innerWidth <= 640) {
-          setTerminalSize({
-            width: window.innerWidth,
-            height: window.innerHeight * 0.5,
-          });
-
-          // Use functional update to avoid dependency on position
-          setPosition((prev) => {
-            if (prev.y > window.innerHeight - 100) {
-              return {
-                ...prev,
-                y: window.innerHeight - 100,
-              };
-            }
-            return prev;
-          });
-        } else {
-          // For desktop
-          setTerminalSize({
-            width: 600,
-            height: 400,
-          });
-
-          // Use functional update to avoid dependency on position
-          setPosition((prev) => {
-            const newX = Math.min(prev.x, window.innerWidth - 600);
-            const newY = Math.min(prev.y, window.innerHeight - 400);
-
-            if (newX !== prev.x || newY !== prev.y) {
-              return {
-                x: Math.max(0, newX),
-                y: Math.max(0, newY),
-              };
-            }
-            return prev;
-          });
-        }
+      if (resizeTimeoutRef.current) {
+        clearTimeout(resizeTimeoutRef.current);
       }
+
+      resizeTimeoutRef.current = setTimeout(() => {
+        if (!isFullscreen && !isDragging && !userHasDragged) {
+          if (window.innerWidth <= 640) {
+            setTerminalSize({
+              width: window.innerWidth,
+              height: window.innerHeight * 0.5,
+            });
+
+            setPosition({
+              x: 0,
+              y: window.innerHeight - window.innerHeight * 0.5,
+            });
+          } else {
+            setTerminalSize({
+              width: initialSizeRef.current.width,
+              height: initialSizeRef.current.height,
+            });
+
+            setPosition({
+              x: window.innerWidth - 620,
+              y: window.innerHeight - 420,
+            });
+          }
+        } else {
+          // For mobile devices
+          if (window.innerWidth <= 640) {
+            setTerminalSize({
+              width: window.innerWidth,
+              height: window.innerHeight * 0.5,
+            });
+
+            setPosition((prev) => {
+              if (prev.y > window.innerHeight - 100) {
+                return {
+                  ...prev,
+                  y: window.innerHeight - 100,
+                };
+              }
+              return prev;
+            });
+          } else {
+            // For desktop
+            setTerminalSize({
+              width: initialSizeRef.current.width,
+              height: initialSizeRef.current.height,
+            });
+
+            setPosition((prev) => {
+              const newX = Math.min(prev.x, window.innerWidth - initialSizeRef.current.width);
+              const newY = Math.min(prev.y, window.innerHeight - initialSizeRef.current.height);
+
+              if (newX !== prev.x || newY !== prev.y) {
+                return {
+                  x: Math.max(0, newX),
+                  y: Math.max(0, newY),
+                };
+              }
+              return prev;
+            });
+          }
+        }
+        isResizingRef.current = false;
+      }, 100);
     };
 
     window.addEventListener("resize", handleWindowResize);
@@ -512,8 +528,11 @@ export default function Terminal() {
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseup", handleMouseUp);
       window.removeEventListener("resize", handleWindowResize);
+      if (resizeTimeoutRef.current) {
+        clearTimeout(resizeTimeoutRef.current);
+      }
     };
-  }, [isDragging, dragOffset, isFullscreen, userHasDragged, handleMouseMove, terminalSize]);
+  }, [isDragging, dragOffset, isFullscreen, userHasDragged, handleMouseMove]);
 
   useEffect(() => {
     if (terminalRef.current) {
