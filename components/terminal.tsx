@@ -2,7 +2,7 @@
 
 import type React from "react";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import {
   X,
   Minus,
@@ -232,7 +232,7 @@ export default function Terminal() {
         if (subCommand === "play") {
           setIsPlaying(true);
           if (audioRef.current) {
-            audioRef.current.play().catch((e) => {
+            audioRef.current.play().catch(() => {
               output = [
                 "Error: Could not play music. User interaction required.",
               ];
@@ -380,7 +380,7 @@ export default function Terminal() {
     }
   };
 
-  const handleMouseMove = (e: MouseEvent) => {
+  const handleMouseMove = useCallback((e: MouseEvent) => {
     if (isDragging && !isFullscreen) {
       if (typeof window !== "undefined" && window.innerWidth <= 640) {
         const newY = Math.max(
@@ -419,7 +419,7 @@ export default function Terminal() {
         setUserHasDragged(true);
       }
     }
-  };
+  }, [isDragging, isFullscreen, dragOffset, terminalSize, setPosition, setUserHasDragged]);
 
   const handleMouseUp = () => {
     setIsDragging(false);
@@ -513,7 +513,7 @@ export default function Terminal() {
       document.removeEventListener("mouseup", handleMouseUp);
       window.removeEventListener("resize", handleWindowResize);
     };
-  }, [isDragging, dragOffset, isFullscreen, userHasDragged]); // Removed position from dependencies
+  }, [isDragging, dragOffset, isFullscreen, userHasDragged, handleMouseMove, terminalSize]);
 
   useEffect(() => {
     if (terminalRef.current) {
@@ -659,7 +659,7 @@ export default function Terminal() {
               Welcome to the CLI
             </p>
             <p className={cn("text-xs opacity-80", currentTheme.text)}>
-              Type 'help' to see available commands
+              Type &apos;help&apos; to see available commands
             </p>
           </div>
 

@@ -67,7 +67,6 @@ const media: Media[] = [
 ];
 
 export default function Gallery() {
-  const [videoState, setVideoState] = useState<{ [id: number]: boolean }>({});
   const [iconState, setIconState] = useState<{
     [id: number]: "play" | "pause" | null;
   }>({});
@@ -79,11 +78,9 @@ export default function Gallery() {
     if (video.paused) {
       video.play();
       setIconState((prev) => ({ ...prev, [id]: "pause" }));
-      setVideoState((prev) => ({ ...prev, [id]: true }));
     } else {
       video.pause();
       setIconState((prev) => ({ ...prev, [id]: "play" }));
-      setVideoState((prev) => ({ ...prev, [id]: false }));
     }
     setTimeout(() => setIconState((prev) => ({ ...prev, [id]: null })), 700);
   };
