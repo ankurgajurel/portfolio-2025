@@ -1,0 +1,84 @@
+"use client";
+
+import { ArrowUp } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function Hero() {
+  return (
+    <section className="p-4 container my-10 md:my-16 lg:my-20">
+      <div className="flex flex-col gap-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col gap-2"
+        >
+          <div className="relative w-fit">
+            <h2 className="text-6xl md:text-8xl">ankur gajurel</h2>
+            <a href="https://cal.com/gajurel" target="_blank">
+              <p className="absolute -right-16 top-[50%] bottom-[50%] rotate-90 hover:underline text-xs">
+                open for work
+              </p>
+            </a>
+          </div>
+          <p className="text-xl md:text-4xl font-bodoni font-extralight tracking-tighter">
+            a generalist software engineer
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="max-w-2xl"
+        >
+          <p className="text-lg md:text-xl font-light leading-relaxed">
+            i build and maintain web applications. i work with aws, frontend,
+            and backend. currently working with social media APIs; tiktok,
+            instagram, linkedin, twitter.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+          className="flex flex-wrap gap-4"
+        >
+          <Link
+            href="/#projects"
+            className="group flex items-center gap-2 text-lg hover:underline"
+          >
+            <span>view projects</span>
+            <ArrowUp
+              size={20}
+              className="group-hover:rotate-45 transition-transform duration-300"
+            />
+          </Link>
+          <Link
+            href="/#blogs"
+            className="group flex items-center gap-2 text-lg hover:underline"
+          >
+            <span>writes</span>
+            <ArrowUp
+              size={20}
+              className="group-hover:rotate-45 transition-transform duration-300"
+            />
+          </Link>
+          <a
+            href="https://cal.com/gajurel"
+            target="_blank"
+            className="group flex items-center gap-2 text-lg hover:underline"
+          >
+            <span>book a call</span>
+            <ArrowUp
+              size={20}
+              className="group-hover:rotate-45 transition-transform duration-300"
+            />
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
