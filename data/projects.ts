@@ -136,7 +136,7 @@ export const projects: Project[] = [
     id: 10,
     name: "social media scheduler",
     date: "in progress",
-    collabs: [""],
+    collabs: [],
     type: "fullstack",
     description: "Features OAuth with TikTok, Instagram and LinkedIn, self-hosted scheduler with Express, NextAuth, Prisma with Postgres, Stripe, and Supabase for Storage",
     technologies: ["OAuth", "Express", "NextAuth", "Prisma", "Postgres", "Stripe", "Supabase"]
