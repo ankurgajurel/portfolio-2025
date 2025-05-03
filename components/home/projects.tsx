@@ -2,7 +2,7 @@
 
 import { ArrowUp } from "lucide-react";
 import Link from "next/link";
-import { projects } from "../../data/projects";
+import { projects } from "@/data/projects";
 import HomeProjectCard from "./project-card";
 import { motion } from "framer-motion";
 

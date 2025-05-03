@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowUp } from "lucide-react";
 import Link from "next/link";
-import { posts } from "../../data/blog";
+import { posts } from "@/data/blog";
 
 export default function HomeBlog() {
   return (

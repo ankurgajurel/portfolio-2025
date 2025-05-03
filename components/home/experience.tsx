@@ -16,51 +16,53 @@ export default function Experience() {
       </motion.div>
 
       <div className="flex flex-col gap-12">
-        {experiences.map((exp, index) => (
-          <motion.div
-            key={exp.company}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group border-b-[0.5px] border-black pb-12 last:border-0"
-          >
-            <div className="flex flex-col gap-4">
-              <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4">
-                <h3 className="text-2xl font-medium group-hover:underline">
-                  {exp.role}
-                </h3>
-                <div className="flex items-center gap-2">
-                  <span className="text-lg">@</span>
-                  <a
-                    href={exp.website}
-                    target="_blank"
-                    className="text-lg hover:underline"
-                  >
-                    {exp.company}
-                  </a>
+        {experiences
+          .sort((a, b) => b.id - a.id)
+          .map((exp, index) => (
+            <motion.div
+              key={exp.company}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group border-b-[0.5px] border-black pb-12 last:border-0"
+            >
+              <div className="flex flex-col gap-4">
+                <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4">
+                  <h3 className="text-2xl font-medium group-hover:underline">
+                    {exp.role}
+                  </h3>
+                  <div className="flex items-center gap-2">
+                    <span className="text-lg">@</span>
+                    <a
+                      href={exp.website}
+                      target="_blank"
+                      className="text-lg hover:underline"
+                    >
+                      {exp.company}
+                    </a>
+                  </div>
+                  <span className="text-sm text-gray-600">{exp.period}</span>
+                  <span className="text-sm text-gray-600">({exp.type})</span>
                 </div>
-                <span className="text-sm text-gray-600">{exp.period}</span>
-                <span className="text-sm text-gray-600">({exp.type})</span>
-              </div>
 
-              <p className="text-lg font-light leading-relaxed">
-                {exp.description}
-              </p>
+                <p className="text-lg font-light leading-relaxed">
+                  {exp.description}
+                </p>
 
-              <div className="flex flex-wrap gap-2 mt-2">
-                {exp.stacks.map((stack) => (
-                  <span
-                    key={stack}
-                    className="px-3 py-1 text-sm border-[0.5px] border-black hover:bg-gray-200 transition-colors duration-200"
-                  >
-                    {stack}
-                  </span>
-                ))}
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {exp.stacks.map((stack) => (
+                    <span
+                      key={stack}
+                      className="px-3 py-1 text-sm border-[0.5px] border-black hover:bg-gray-200 transition-colors duration-200"
+                    >
+                      {stack}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
       </div>
     </section>
   );

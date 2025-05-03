@@ -5,6 +5,7 @@ import Button from "./ui/button";
 import { useConsoleVisibleStore } from "@/store/console";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { user } from "@/data/general";
 
 const NavItem = ({ label, link }: { label: string; link: string }) => {
   const isExternal = !link.startsWith("/");
@@ -38,13 +39,14 @@ const NavItem = ({ label, link }: { label: string; link: string }) => {
 
 export default function Navbar() {
   const { isVisible, setIsVisible } = useConsoleVisibleStore();
+
   const navItems = [
     { label: "home", link: "/" },
     { label: "gallery", link: "/gallery" },
     { label: "projects", link: "/#projects" },
-    { label: "twitter", link: "https://x.com/ankurgajurel" },
-    { label: "github", link: "https://github.com/ankurgajurel" },
-    { label: "cal.com", link: "https://cal.com/gajurel" },
+    { label: "twitter", link: user.socials.twitter },
+    { label: "github", link: user.socials.github },
+    { label: "cal.com", link: user.socials.calcom },
   ];
 
   return (

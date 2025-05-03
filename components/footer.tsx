@@ -1,30 +1,31 @@
 "use client";
 
+import { user } from "@/data/general";
+import { Github, Twitter, Linkedin, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Github, Twitter, Linkedin, Mail } from "lucide-react";
 
 export default function Footer() {
   const socialLinks = [
     {
       name: "GitHub",
       icon: Github,
-      href: "https://github.com/ankurgajurel",
+      href: user.socials.github,
     },
     {
       name: "Twitter",
       icon: Twitter,
-      href: "https://twitter.com/ankurgajurel",
+      href: user.socials.twitter,
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      href: "https://linkedin.com/in/ankurgajurel",
+      href: user.socials.linkedin,
     },
     {
       name: "Email",
       icon: Mail,
-      href: "mailto:ankur@gajurel.dev",
+      href: user.socials.mail,
     },
   ];
 
@@ -39,9 +40,9 @@ export default function Footer() {
           className="flex flex-col gap-2"
         >
           <Link href="/" className="text-2xl font-medium hover:underline">
-            ankur gajurel
+            {user.name}
           </Link>
-          <p className="text-sm text-gray-600">software engineer</p>
+          <p className="text-sm text-gray-600">{user.footer.subtitle}</p>
         </motion.div>
 
         <motion.div
@@ -65,7 +66,7 @@ export default function Footer() {
             ))}
           </div>
           <p className="text-sm text-gray-600">
-            © {new Date().getFullYear()} ankur gajurel. all rights reserved.
+            © {new Date().getFullYear()} {user.name}. all rights reserved.
           </p>
         </motion.div>
       </div>

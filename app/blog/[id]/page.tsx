@@ -30,7 +30,7 @@ export default async function BlogPage({
           <h1 className="text-4xl md:text-6xl font-medium mb-4">
             {post.title}
           </h1>
-          <div className="flex flex-col md:flex-row md:items-center gap-4 text-sm text-gray-600">
+        <div className="flex flex-col md:flex-row md:items-center gap-4 text-sm text-gray-600">
             <time>{post.date}</time>
             <div className="flex flex-wrap gap-2">
               {post.tags.map((tag: string) => (

@@ -1,5 +1,5 @@
 import { ArrowUp } from "lucide-react";
-import { Project } from "../../data/projects";
+import { Project } from "@/data/projects";
 
 export default function HomeProjectCard({ project }: { project: Project }) {
   return (

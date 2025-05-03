@@ -1,12 +1,13 @@
 export const experiences = [
   {
+    id: 0,
     role: "software engineer",
     company: "hyperce",
     period: "august 2023 - present",
     website: "https://hyperce.io",
     type: "full time, remote",
     description:
-      "Deployed and maintained 15-20 projects, primarily on AWS EC2 and ECS. Built company landing page using NextJS. Managed infrastructure using AWS, Azure, and GitHub Actions. Worked with Vendure (NestJS) and NextJS/Tailwind for frontend development.",
+      "deployed and maintained 15-20 projects, primarily on AWS EC2 and ECS. Built company landing page using NextJS. managed infrastructure using AWS, Azure, and GitHub Actions. worked with Vendure (NestJS) and NextJS/Tailwind for frontend development.",
     stacks: [
       "AWS",
       "Azure",
@@ -17,13 +18,14 @@ export const experiences = [
     ],
   },
   {
+    id: 1,
     role: "software engineer",
     company: "a5it",
     period: "february 2024 - present",
     website: "https://a5it.com",
     type: "full time, remote",
     description:
-      "Reduced AWS costs by 57% through infrastructure optimization. Migrated services from AWS to DigitalOcean. Built ETL pipelines and CRUD APIs. Contributed to main website and product development. Managed various cloud services including S3, RDS, EC2, ECS, SES, and SQS.",
+      "reduced AWS costs by 57% through infrastructure optimization. migrated services from AWS to DigitalOcean. built ETL pipelines and CRUD APIs. contributed to main website and product development. managed various cloud services including S3, RDS, EC2, ECS, SES, and SQS.",
     stacks: [
       "AWS",
       "DigitalOcean",
@@ -35,13 +37,14 @@ export const experiences = [
     ],
   },
   {
+    id: 2,
     role: "frontend engineer",
     company: "qubitglobal",
     period: "june 2024 - october 2024",
     website: "https://qubitglobal.io",
     type: "consulting",
     description:
-      "Built frontend applications with focus on CRUD operations and analytics data visualization. Worked with Go backend APIs and managed infrastructure on DigitalOcean Kubernetes.",
+      "built frontend applications with focus on CRUD operations and analytics data visualization. worked with Go backend APIs and managed infrastructure on DigitalOcean Kubernetes.",
     stacks: [
       "React",
       "Tailwind",
@@ -51,13 +54,14 @@ export const experiences = [
     ],
   },
   {
+    id: 3,
     role: "frontend engineer",
     company: "resimator",
     period: "march 2024 - october 2024",
     website: "https://resimator.fi",
     type: "consulting",
     description:
-      "Converted UI designs to NextJS/Tailwind implementations. Maintained POS/Kiosk app and CMS for restaurant management. Developed webshop using NextJS, Tailwind, Framer, and Ant Design. Integrated Strapi and GraphQL for CMS functionality.",
+      "converted UI designs to NextJS/Tailwind implementations. maintained POS/Kiosk app and CMS for restaurant management. developed webshop using NextJS, Tailwind, Framer, and Ant Design. integrated Strapi and GraphQL for CMS functionality.",
     stacks: [
       "React",
       "NextJS",
@@ -65,7 +69,25 @@ export const experiences = [
       "Strapi",
       "GraphQL",
       "Ant Design",
-      "Framer",
+      "Framer Motion",
+    ],
+  },
+  {
+    id: 4,
+    role: "solo engineer",
+    company: "schedule.video",
+    period: "april 2024 - present",
+    website: "https://schedule.video",
+    type: "consulting",
+    description:
+      "developed a social media scheduling platform with OAuth integration for TikTok, Instagram, and LinkedIn. implemented a self-hosted scheduler using Express and built the frontend with NextJS. utilized NextAuth for authentication, Prisma with PostgreSQL for data management, Stripe for payments, and Supabase for media storage.",
+    stacks: [
+      "NextJS",
+      "Express",
+      "NextAuth",
+      "Prisma",
+      "PostgreSQL",
+      "Supabase",
     ],
   },
 ];

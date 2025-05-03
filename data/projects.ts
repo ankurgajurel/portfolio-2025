@@ -24,11 +24,12 @@ export const projects: Project[] = [
     date: "march, 2024",
     collabs: [],
     type: "fullstack",
-    description: "Landing page with Strapi CMS, GraphQL, Framer Motion, and a custom design system",
+    description:
+      "Landing page with Strapi CMS, GraphQL, Framer Motion, and a custom design system",
     links: {
-      demo: "https://staging.resimator.fi/"
+      demo: "https://staging.resimator.fi/",
     },
-    technologies: ["Strapi", "GraphQL", "Framer Motion", "Design System"]
+    technologies: ["Strapi", "GraphQL", "Framer Motion", "Design System"],
   },
   {
     id: 1,
@@ -36,47 +37,36 @@ export const projects: Project[] = [
     date: "february, 2024",
     collabs: ["sls0n"],
     type: "fullstack/devops",
-    description: "E-commerce platform developed in collaboration with Silson Sapkota",
+    description:
+      "E-commerce platform developed in collaboration with Silson Sapkota",
     links: {
-      demo: "https://a5it.com/"
+      demo: "https://a5it.com/",
     },
-    technologies: ["E-commerce", "Collaboration"]
-  },
-  {
-    id: 2,
-    name: "rppsathi",
-    date: "january, 2024",
-    collabs: [],
-    type: "frontend/strapi",
-    description: "Artist group website",
-    links: {
-      demo: "https://rppsathi.com.np/"
-    },
-    technologies: ["Artist Platform"]
+    technologies: ["E-commerce", "Collaboration"],
   },
   {
     id: 3,
     name: "webcraft",
-    date: "december, 2023",
+    date: "december, 2024",
     collabs: ["sls0n", "devsargam"],
     type: "fullstack",
     description: "Website builder built with Silson Sapkota and Sargam Poudel",
     links: {
-      demo: "https://app.webcraft.raylux.io/"
+      demo: "https://app.webcraft.raylux.io/",
     },
-    technologies: ["Website Builder", "Collaboration"]
+    technologies: ["Website Builder", "Collaboration"],
   },
   {
     id: 4,
-    name: "invey form builder",
+    name: "invey",
     date: "november, 2023",
-    collabs: [],
+    collabs: ["shekharkoirala"],
     type: "frontend",
     description: "Form builder application",
     links: {
-      demo: "https://invey.ankurgajurel.tech/formbuilder"
+      demo: "https://invey.ankurgajurel.tech/formbuilder",
     },
-    technologies: ["Form Builder"]
+    technologies: ["Form Builder"],
   },
   {
     id: 5,
@@ -86,21 +76,21 @@ export const projects: Project[] = [
     type: "ui conversion",
     description: "Desktop-friendly application",
     links: {
-      demo: "https://hydra.ankurgajurel.com.np/"
+      demo: "https://hydra.ankurgajurel.com.np/",
     },
-    technologies: ["Desktop App"]
+    technologies: ["Desktop App"],
   },
   {
     id: 6,
-    name: "an ode to letters",
+    name: "utarchadhav",
     date: "september, 2023",
-    collabs: [],
+    collabs: ["kirangajurel"],
     type: "fullstack",
     description: "Podcast platform",
     links: {
-      demo: "https://utarchadhav.com/an-ode-to-letters"
+      demo: "https://utarchadhav.com",
     },
-    technologies: ["Podcast"]
+    technologies: ["Podcast"],
   },
   {
     id: 7,
@@ -110,9 +100,9 @@ export const projects: Project[] = [
     type: "design",
     description: "Email template design clone",
     links: {
-      demo: "https://webshop-emails.vercel.app/"
+      demo: "https://webshop-emails.vercel.app/",
     },
-    technologies: ["Email Design"]
+    technologies: ["Email Design"],
   },
   {
     id: 8,
@@ -121,33 +111,33 @@ export const projects: Project[] = [
     collabs: [],
     type: "social",
     description: "Social networking platform for researchers and universities",
-    technologies: ["Social Network", "WIP"]
+    technologies: ["Social Network", "WIP"],
   },
   {
     id: 9,
     name: "cognistream",
     date: "fullstack",
-    collabs: [],
+    collabs: ["shekharkoirala"],
     type: "ai",
     description: "Customer interviews with emotional depth analysis",
-    technologies: ["AI", "Analysis", "WIP"]
+    technologies: ["AI", "Analysis", "WIP"],
   },
   {
     id: 10,
     name: "social media scheduler",
     date: "in progress",
-    collabs: [],
+    collabs: ["sumansid"],
     type: "fullstack",
-    description: "Features OAuth with TikTok, Instagram and LinkedIn, self-hosted scheduler with Express, NextAuth, Prisma with Postgres, Stripe, and Supabase for Storage",
-    technologies: ["OAuth", "Express", "NextAuth", "Prisma", "Postgres", "Stripe", "Supabase"]
+    description:
+      "Features OAuth with TikTok, Instagram and LinkedIn, self-hosted scheduler with Express, NextAuth, Prisma with Postgres, Stripe, and Supabase for Storage",
+    technologies: [
+      "OAuth",
+      "Express",
+      "NextAuth",
+      "Prisma",
+      "Postgres",
+      "Stripe",
+      "Supabase",
+    ],
   },
-  {
-    id: 11,
-    name: "journal blog",
-    date: "in progress",
-    collabs: [],
-    type: "fullstack",
-    description: "Built with Firebase Spark free tier (Auth, Storage, Database), NextJS for dashboard and frontend, and Resend for email notifications. A free-to-host journal website for a friend.",
-    technologies: ["Firebase", "NextJS", "Resend", "Free Tier"]
-  }
 ];
