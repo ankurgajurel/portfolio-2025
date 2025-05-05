@@ -8,7 +8,20 @@ import Blog from "@/components/home/blog";
 
 export const metadata: Metadata = {
   ...siteMetadata,
-  title: siteConfig.title, // Use default title for home page
+  title: siteConfig.title,
+  description: siteConfig.description,
+  openGraph: {
+    ...siteMetadata.openGraph,
+    type: "website",
+    url: siteConfig.url,
+    title: siteConfig.title,
+    description: siteConfig.description,
+  },
+  twitter: {
+    ...siteMetadata.twitter,
+    title: siteConfig.title,
+    description: siteConfig.description,
+  },
 };
 
 export default function Home() {

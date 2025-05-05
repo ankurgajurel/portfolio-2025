@@ -7,7 +7,7 @@ export const siteConfig = {
   description:
     "generalist software engineer passionate about building impactful solutions.",
   url: "https://ankurgajurel.com.np",
-  ogImage: "https://ankurgajurel.com.np/og.png",
+  ogImage: "/og.png",
   links: {
     twitter: "https://twitter.com/ankurgajurel",
     github: "https://github.com/ankurgajurel",
@@ -46,24 +46,29 @@ export const siteMetadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteConfig.url,
-    title: siteConfig.title,
+    title: {
+      default: siteConfig.title,
+      template: `%s | ${siteConfig.name}`,
+    },
     description: siteConfig.description,
     siteName: siteConfig.name,
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.name,
-      },
-    ],
+    images: [{
+      url: siteConfig.ogImage,
+      width: 1200,
+      height: 630,
+      alt: `${siteConfig.name} - ${siteConfig.description}`,
+    }],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.title,
+    title: {
+      default: siteConfig.title,
+      template: `%s | ${siteConfig.name}`,
+    },
     description: siteConfig.description,
+    site: "@ankurgajurel",
+    creator: "@ankurgajurel",
     images: [siteConfig.ogImage],
-    creator: siteConfig.creator,
   },
   robots: {
     index: true,
