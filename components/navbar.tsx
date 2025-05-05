@@ -43,10 +43,10 @@ export default function Navbar() {
   const navItems = [
     { label: "home", link: "/" },
     { label: "gallery", link: "/gallery" },
-    { label: "projects", link: "/#projects" },
     { label: "twitter", link: user.socials.twitter },
     { label: "github", link: user.socials.github },
     { label: "cal.com", link: user.socials.calcom },
+    { label: "resume", link: "/resume/resume.pdf" },
   ];
 
   return (
