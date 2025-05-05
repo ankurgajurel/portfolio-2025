@@ -2,6 +2,38 @@ import { redirect } from "next/navigation";
 import { ArrowUp } from "lucide-react";
 import Link from "next/link";
 import { posts } from "@/data/blog";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const id = (await params).id;
+  const post = posts.find((post) => post.id === id);
+
+  if (!post) return {
+    title: 'Post Not Found',
+    description: 'The requested blog post could not be found.'
+  };
+
+  return {
+    title: post.title,
+    description: post.content.slice(0, 155) + '...',
+    openGraph: {
+      title: post.title,
+      description: post.content.slice(0, 155) + '...',
+      type: 'article',
+      publishedTime: post.date,
+      tags: post.tags,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.content.slice(0, 155) + '...',
+    },
+  };
+}
 
 export default async function BlogPage({
   params,

@@ -1,5 +1,6 @@
 export const user = {
   name: "ankur gajurel",
+  role: "engineer",
   openForWork: true,
   hero: {
     title: "",

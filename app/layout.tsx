@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import Terminal from "@/components/terminal";
 import Footer from "@/components/footer";
+import { siteMetadata } from "@/config/siteConfig";
 
 const hubotSans = Hubot_Sans({
   variable: "--font-hubot-sans",
@@ -15,10 +16,7 @@ const bodoni = Bodoni_Moda({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "ankur gajurel, engineer",
-  description: "generalist software engineer.",
-};
+export const metadata: Metadata = siteMetadata;
 
 export default function RootLayout({
   children,
