@@ -11,7 +11,12 @@ export interface Media {
 export default async function Gallery() {
   if (!process.env.GALLERY_JSON_ENDPOINT) redirect("/");
 
-  const res = await fetch(process.env.GALLERY_JSON_ENDPOINT);
+  const res = await fetch(process.env.GALLERY_JSON_ENDPOINT, {
+    next: {
+      revalidate: 60,
+    },
+  });
+
   const media: Media[] = await res.json();
 
   return (
