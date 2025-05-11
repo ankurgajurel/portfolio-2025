@@ -5,6 +5,7 @@ export type Project = {
   type: string;
   date: string;
   description?: string;
+  content?: string;
   links?: {
     github?: string;
     demo?: string;
@@ -29,7 +30,7 @@ export const projects: Project[] = [
     links: {
       demo: "https://staging.resimator.fi/",
     },
-    technologies: ["Strapi", "GraphQL", "Framer Motion", "Design System"],
+    technologies: ["strapi", "graphQL", "framer motion", "design system"],
   },
   {
     id: 1,
@@ -42,7 +43,7 @@ export const projects: Project[] = [
     links: {
       demo: "https://a5it.com/",
     },
-    technologies: ["E-commerce", "Collaboration"],
+    technologies: ["e-commerce", "collaboration"],
   },
   {
     id: 3,
@@ -54,7 +55,7 @@ export const projects: Project[] = [
     links: {
       demo: "https://app.webcraft.raylux.io/",
     },
-    technologies: ["Website Builder", "Collaboration"],
+    technologies: ["website builder", "collaboration"],
   },
   {
     id: 4,
@@ -66,7 +67,7 @@ export const projects: Project[] = [
     links: {
       demo: "https://invey.ankurgajurel.tech/formbuilder",
     },
-    technologies: ["Form Builder"],
+    technologies: ["form builder"],
   },
   {
     id: 5,
@@ -78,7 +79,7 @@ export const projects: Project[] = [
     links: {
       demo: "https://hydra.ankurgajurel.com.np/",
     },
-    technologies: ["Desktop App"],
+    technologies: ["ui design"],
   },
   {
     id: 6,
@@ -90,7 +91,7 @@ export const projects: Project[] = [
     links: {
       demo: "https://utarchadhav.com",
     },
-    technologies: ["Podcast"],
+    technologies: ["podcast"],
   },
   {
     id: 7,
@@ -102,7 +103,7 @@ export const projects: Project[] = [
     links: {
       demo: "https://webshop-emails.vercel.app/",
     },
-    technologies: ["Email Design"],
+    technologies: ["email design"],
   },
   {
     id: 8,
@@ -111,7 +112,7 @@ export const projects: Project[] = [
     collabs: [],
     type: "social",
     description: "Social networking platform for researchers and universities",
-    technologies: ["Social Network", "WIP"],
+    technologies: ["social network", "wip"],
   },
   {
     id: 9,
@@ -120,7 +121,7 @@ export const projects: Project[] = [
     collabs: ["shekharkoirala"],
     type: "ai",
     description: "Customer interviews with emotional depth analysis",
-    technologies: ["AI", "Analysis", "WIP"],
+    technologies: ["ai", "analysis", "wip"],
   },
   {
     id: 10,
@@ -131,13 +132,13 @@ export const projects: Project[] = [
     description:
       "Features OAuth with TikTok, Instagram and LinkedIn, self-hosted scheduler with Express, NextAuth, Prisma with Postgres, Stripe, and Supabase for Storage",
     technologies: [
-      "OAuth",
-      "Express",
-      "NextAuth",
-      "Prisma",
-      "Postgres",
-      "Stripe",
-      "Supabase",
+      "oAuth",
+      "express",
+      "nextAuth",
+      "prisma",
+      "postgres",
+      "stripe",
+      "supabase",
     ],
   },
 ];
