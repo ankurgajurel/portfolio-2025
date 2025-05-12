@@ -2,6 +2,7 @@ export const user = {
   name: "ankur gajurel",
   role: "engineer",
   openForWork: true,
+  toolsWebsite: "https://tools.ankurgajurel.tech",
   hero: {
     title: "",
     subtitle: "a generalist software engineer",

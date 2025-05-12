@@ -47,11 +47,12 @@ export default function Navbar() {
     { label: "github", link: user.socials.github },
     { label: "cal.com", link: user.socials.calcom },
     { label: "resume", link: "/resume/resume.pdf" },
+    { label: "tools", link: user.toolsWebsite },
   ];
 
   return (
     <nav className="container mx-auto flex flex-col md:flex-row space-y-5 justify-between md:items-center p-4">
-      <div className="flex items-center gap-3 md:gap-5 lg:gap-10">
+      <div className="flex items-center flex-wrap gap-3 md:gap-5 lg:gap-10">
         {navItems.map((item) => (
           <NavItem key={item.label} {...item} />
         ))}
