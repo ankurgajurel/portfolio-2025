@@ -3,7 +3,7 @@ export const experiences = [
     id: 0,
     role: "software engineer",
     company: "hyperce",
-    period: "august 2023 - present",
+    period: "august 2023 - february 2024",
     website: "https://hyperce.io",
     type: "full time, remote",
     description:
@@ -21,7 +21,7 @@ export const experiences = [
     id: 1,
     role: "software engineer",
     company: "a5it",
-    period: "february 2024 - present",
+    period: "february 2024 - november 2024",
     website: "https://a5it.com",
     type: "full time, remote",
     description:
@@ -76,7 +76,7 @@ export const experiences = [
     id: 4,
     role: "solo engineer",
     company: "schedule.video",
-    period: "april 2024 - present",
+    period: "april 2025 - present",
     website: "https://schedule.video",
     type: "consulting",
     description:
