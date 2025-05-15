@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar";
 import Terminal from "@/components/terminal";
 import Footer from "@/components/footer";
 import { siteMetadata } from "@/config/siteConfig";
+import { Analytics } from "@vercel/analytics/react";
 
 const hubotSans = Hubot_Sans({
   variable: "--font-hubot-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <Terminal />
+        <Analytics />
       </body>
     </html>
   );
