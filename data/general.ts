@@ -15,7 +15,7 @@ export const user = {
   socials: {
     linkedin: "https://linkedin.com/in/ankurgajurel",
     twitter: "https://twitter.com/ankurgajurel",
-    github: "https://github.com/ankurgajurel",
+    github: "https://github.com/ankurgajurel?tab=repositories",
     mail: "mailto:ankur@gajurel.dev",
     calcom: "https://cal.com/gajurel",
   },

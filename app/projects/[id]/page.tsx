@@ -3,6 +3,7 @@ import { ArrowUp } from "lucide-react";
 import Link from "next/link";
 import { projects } from "@/data/projects";
 import { Metadata } from "next";
+import Button from "@/components/ui/button";
 
 export async function generateMetadata({
   params,
@@ -85,9 +86,25 @@ export default async function ProjectPage({
             {project.description}
           </p>
 
-          <p className="mb-6 font-light leading-relaxed">
-            {project?.content}
-          </p>
+          {project.links?.demo && (
+            <div className="mt-12 mb-8">
+              <a
+                href={project.links.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="group flex items-center gap-2 text-sm">
+                  <span>view demo</span>
+                  <ArrowUp
+                    size={16}
+                    className="group-hover:rotate-45 transition-transform duration-300"
+                  />
+                </Button>
+              </a>
+            </div>
+          )}
+
+          <p className="mb-6 font-light leading-relaxed">{project?.content}</p>
         </div>
 
         <footer className="mt-16 pt-8 border-t-[0.5px] border-black">

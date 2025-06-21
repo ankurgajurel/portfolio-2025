@@ -1,4 +1,4 @@
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, ExternalLink } from "lucide-react";
 import { Project } from "@/data/projects";
 import Link from "next/link";
 
@@ -10,9 +10,16 @@ export default function HomeProjectCard({ project }: { project: Project }) {
         <div className="col-span-2 text-sm">{project.name}</div>
         <div className="flex flex-wrap gap-2">
           {project.collabs.map((collab) => (
-            <div key={collab} className="text-sm text-gray-600">
+            <a
+              key={collab}
+              href={`https://github.com/${collab}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="text-sm text-gray-600 hover:text-blue-600 transition-colors duration-200 flex items-center gap-1 group/collab"
+            >
               @{collab}
-            </div>
+            </a>
           ))}
         </div>
         <div className="grid grid-cols-2 items-center">

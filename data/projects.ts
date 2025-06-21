@@ -20,17 +20,32 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: 3,
+    name: "webcraft",
+    date: "december, 2024",
+    collabs: ["sls0n"],
+    type: "fullstack",
+    content:
+      "drag-and-drop website builder tool. users can create websites without coding by dragging components and customizing them.",
+    links: {
+      demo: "https://webcraft.ankurgajurel.tech/",
+    },
+    technologies: ["website builder", "collaboration"],
+  },
+  {
     id: 0,
     name: "resimator's landing page",
     date: "march, 2024",
     collabs: [],
     type: "fullstack",
     description:
-      "Landing page with Strapi CMS, GraphQL, Framer Motion, and a custom design system",
+      "landing page with strapi cms, graphql, framer motion, and a custom design system",
+    content:
+      "landing page for a finnish company. built with strapi cms for content management and graphql for data fetching. uses framer motion for animations and a custom design system for consistent styling.",
     links: {
       demo: "https://staging.resimator.fi/",
     },
-    technologies: ["strapi", "graphQL", "framer motion", "design system"],
+    technologies: ["strapi", "graphql", "framer motion", "design system"],
   },
   {
     id: 1,
@@ -39,31 +54,23 @@ export const projects: Project[] = [
     collabs: ["sls0n"],
     type: "fullstack/devops",
     description:
-      "E-commerce platform developed in collaboration with Silson Sapkota",
+      "e-commerce platform developed in collaboration with silson sapkota",
+    content:
+      "e-commerce platform for selling products online. built with modern web technologies and deployed with proper devops practices.",
     links: {
       demo: "https://a5it.com/",
     },
     technologies: ["e-commerce", "collaboration"],
   },
-  {
-    id: 3,
-    name: "webcraft",
-    date: "december, 2024",
-    collabs: ["sls0n", "devsargam"],
-    type: "fullstack",
-    description: "Website builder built with Silson Sapkota and Sargam Poudel",
-    links: {
-      demo: "https://app.webcraft.raylux.io/",
-    },
-    technologies: ["website builder", "collaboration"],
-  },
+
   {
     id: 4,
     name: "invey",
     date: "november, 2023",
     collabs: ["shekharkoirala"],
     type: "frontend",
-    description: "Form builder application",
+    content:
+      "form builder tool for creating surveys and forms. users can drag form elements and customize them for data collection.",
     links: {
       demo: "https://invey.ankurgajurel.tech/formbuilder",
     },
@@ -75,7 +82,8 @@ export const projects: Project[] = [
     date: "2024",
     collabs: [],
     type: "ui conversion",
-    description: "Desktop-friendly application",
+    content:
+      "simple ui design. optimized for larger screens and desktop workflows.",
     links: {
       demo: "https://hydra.ankurgajurel.com.np/",
     },
@@ -87,7 +95,9 @@ export const projects: Project[] = [
     date: "september, 2023",
     collabs: ["kirangajurel"],
     type: "fullstack",
-    description: "Podcast platform",
+    description: "podcast platform",
+    content:
+      "platform for hosting and streaming podcasts. users can upload audio files and listeners can stream episodes.",
     links: {
       demo: "https://utarchadhav.com",
     },
@@ -99,7 +109,9 @@ export const projects: Project[] = [
     date: "august, 2023",
     collabs: [],
     type: "design",
-    description: "Email template design clone",
+    description: "email template design clone",
+    content:
+      "email template design tool. users can create and customize email templates for marketing campaigns.",
     links: {
       demo: "https://webshop-emails.vercel.app/",
     },
@@ -107,34 +119,32 @@ export const projects: Project[] = [
   },
   {
     id: 8,
-    name: "crunchfind",
-    date: "backend",
-    collabs: [],
-    type: "social",
-    description: "Social networking platform for researchers and universities",
-    technologies: ["social network", "wip"],
-  },
-  {
-    id: 9,
     name: "cognistream",
     date: "fullstack",
-    collabs: ["shekharkoirala"],
+    collabs: ["shekharkoirala", "geeksambhu"],
     type: "ai",
-    description: "Customer interviews with emotional depth analysis",
+    description: "customer interviews with emotional depth analysis",
+    content:
+      "ai-powered tool for analyzing customer interviews. uses sentiment analysis to understand emotional responses and feedback.",
     technologies: ["ai", "analysis", "wip"],
   },
   {
-    id: 10,
+    id: 9,
     name: "social media scheduler",
-    date: "in progress",
+    date: "halted",
     collabs: ["sumansid"],
     type: "fullstack",
+    links: {
+      demo: "https://schedule.video/",
+    },
     description:
-      "Features OAuth with TikTok, Instagram and LinkedIn, self-hosted scheduler with Express, NextAuth, Prisma with Postgres, Stripe, and Supabase for Storage",
+      "features oauth with tiktok, instagram and linkedin, self-hosted scheduler with express, nextauth, prisma with postgres, stripe, and supabase for storage",
+    content:
+      "social media scheduling tool. users can connect their social accounts and schedule posts across multiple platforms. includes payment processing and file storage.",
     technologies: [
-      "oAuth",
+      "oauth",
       "express",
-      "nextAuth",
+      "nextauth",
       "prisma",
       "postgres",
       "stripe",
