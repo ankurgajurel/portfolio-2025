@@ -19,4 +19,5 @@ export const user = {
     mail: "mailto:ankur@gajurel.dev",
     calcom: "https://cal.com/gajurel",
   },
+  playlist: "1YODNPvuFFJtpgvyxZnxYG",
 };
