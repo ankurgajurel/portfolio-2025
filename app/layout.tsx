@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import Terminal from "@/components/terminal";
 import Footer from "@/components/footer";
+import ChatBubble from "@/components/home/chat-bubble";
 import { siteMetadata } from "@/config/siteConfig";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -31,6 +32,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <Terminal />
+        <ChatBubble />
         <Analytics />
       </body>
     </html>
