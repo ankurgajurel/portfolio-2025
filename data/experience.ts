@@ -74,21 +74,25 @@ export const experiences = [
   },
   {
     id: 4,
-    role: "fullstack engineer",
-    company: "eve mobility",
-    period: "april 2025 - present",
-    website: "https://eve-mobility.io",
+    role: "software engineer consultant",
+    company: "artisai",
+    period: "october 2025 - june 2025",
+    website: "https://artisai.ie",
     type: "consulting",
     description:
-      "helping build a webapp for monitoring and analysing electric fleet vehicles data for an eurpoan company. visualization heavy for frontend.",
-    stacks: [
-      "NextJS",
-      "Reacharts",
-      "NextAuth",
-      "Prisma",
-      "PostgreSQL",
-      "FastAPI",
-      "Supabase",
-    ],
+      "worked on rnd project for a european company to build a webapp for monitoring and analysing electric fleet vehicles data.",
+    stacks: ["NextJS", "Tailwind", "React Query", "Supabase", "useSWR", "AWS"],
+  },
+  {
+    id: 5,
+    role: "software engineer",
+    company: "shortimize",
+    period: "july 2025 - present",
+    website: "https://shortimize.com",
+    type: "full time, remote",
+    description: "an analytics platform for social media platforms.",
+    stacks: ["NextJS", "PostgreSQL", "React Query", "Supabase", "Vercel"],
   },
 ];
+
+export const currentWork = experiences[5];
